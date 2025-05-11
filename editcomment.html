@@ -67,7 +67,6 @@
          </div>
        </div>
        </div>
-
 <script>
 
 let comment=document.getElementById("comment-input")
@@ -96,9 +95,8 @@ commentDiv.style.backgroundColor="rgba(155, 160, 164, 0.082)";
 const username=localStorage.getItem("userName-key")
 const userInfo=document.createElement("div")
 // userInfo.className="text-danger"
-userInfo.innerHTML=`<img src="./imgaes/avtar.png" width="4%"> 
+userInfo.innerHTML=`<img src="./imgaes/avtar.png" width: "40px"; height: "40px"; object-fit: "cover";> 
 <b>@${username}</b>
-
 `
 const commentinput=document.createElement("div")
 const commentText=document.createElement("p")
