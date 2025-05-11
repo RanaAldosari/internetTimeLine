@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheDigitalShift</title>
+    <link rel="stylesheet" href="style.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+<body>
+<!-- model -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Log in</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">UserName:</label>
+            <input type="text" class="form-control" id="recipient-name">
+            <div id="user-error-msg" class="text-danger small"></div>
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Password:</label>
+      <input type="password"  class="form-control" id="recipient-pass">
+      <div id="pass-error-msg" class="text-danger small"></div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+<button type="button" class="btn btn-primary" onclick="switchLogin()">Log in</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- regester -->
+<div class="modal fade" id="exampleModall" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Create An Account </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="signUp-form">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">UserName:</label>
+            <input type="text" class="form-control" id="regester-name">
+            <div id="regesterName-error-msg" class="text-danger small"></div>
+          </div>
+  <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Email:</label>
+            <input type="text" class="form-control" id="regester-email">
+            <div id="regesterEmail-error-msg" class="text-danger small"></div>
+          </div>
+  <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Phone Number:</label>
+            <input type="text" class="form-control" id="regester-phone">
+            <div id="regesterPhone-error-msg" class="text-danger small"></div>
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Password:</label>
+      <input type="password"  class="form-control" id="regester-pass">
+      <div id="regesterPass-error-msg" class="text-danger small"></div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+<button type="button" class="btn btn-primary" onclick="switchSignup()">SignUp</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- container -->
+<div class=" container" style="min-height: 100vh; background-color: rgb(198 217 244) ;">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary shadow p-3 mb-5 bg-body-tertiary rounded-bottom" >
+          <div class="container-fluid ">
+            <a class="navbar-brand" href="#">TheDigitalShift</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
+              </ul>
+              <div class="d-flex align-items-center gap-2 flex-column flex-lg-row">
+  <button type="button" class="btn btn-outline-primary w-100 w-lg-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
+  <button type="button" class="btn btn-primary w-100 w-lg-auto" data-bs-toggle="modal" data-bs-target="#exampleModall">Register</button>
+</div>
+
+            </div>
+          </div>
+        </nav>
+
+
+        <!-- post -->
+    <div id="posts" class=" shadow p-3 mb-5 bg-body-tertiary rounded-2">
+    <div class="card">
+      <div class="card-header ">
+        <img src="imgaes\avtar.png" alt="avatar-user" style="width: 40px; height: 40px; object-fit: cover;">
+        <span class="fw-bold">@Rana_Aldosari</span>
+      </div>
+      <div class="card-body">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKJrZomfAppJyPeAYYJOE-JWqSaXg0AKy2n4VrwqMcvwQ9Ys3TlL7ilAQItL2ajKbrds4&usqp=CAU" class="w-75" style="height: 200px;" alt="" >
+        <h6 class="text-secondary fw-normal">before the late 1500s</h6>
+        <h5 class="card-title fw-small">How did people communicate before the Internet?</h5>
+        <p class="card-text">Throughout human history, sending a message to someone required effort, such as sending someone or shouting, to reach neighbors. Another solution was necessary. Since the first century BC, people began raising carrier pigeons, thanks to their innate ability to find their way home over long distances.</p>
+        <hr>
+        <div class="d-flex gap-3">
+            <span>2 <i  onclick="showComment()" class="fa-regular fa-comment"></i>  </span>
+                        <span>3 <i data-bs-toggle="modal" data-bs-target="#exampleModall"   onclick="changeColor()" id="icone-like" class="fa-regular fa-heart"></i> </span>
+
+        </div>
+        <a href="#" class="btn btn-primary" onclick="showComment()">Read More!</a>
+      </div>
+    </div>
+    </div>
+
+  <div class="bg-primary btn btn-primary rounded-5 position-fixed bottom-2 end-0  m-3" onclick="showRegisterForm()" data-bs-toggle="modal" data-bs-target="#exampleModall"  id="add-btn" data-bs-toggle="modal" data-bs-target="#create-events">+</div>
+
+
+<!-- 2 -->
+ <div id="posts" class=" shadow p-3 mb-5 bg-body-tertiary rounded-2">
+    <div class="card">
+      <div class="card-header ">
+        <img src="imgaes\avtar.png" alt="avatar-user" style="width: 40px; height: 40px; object-fit: cover;">
+        <span class="fw-bold">@Rana_Aldosari</span>
+      </div>
+      <div class="card-body">
+        <img src="https://i0.wp.com/followict.news/wp-content/uploads/2024/11/1-18.jpg?resize=993%2C559&ssl=1" class="w-75" style="height: 200px;" alt="">
+        <h6 class="text-secondary fw-normal">1969-1982</h6>
+        <h5 class="card-title fw-small">How did the Internet appear?</h5>
+        <p class="card-text">The Internet emerged in 1969, when the US Department of Defense established a communications network linking a number of analysis centers and satellites, dubbed ARPANET. These networks subsequently connected numerous universities and research institutions, with the goal of maximizing the computational capabilities of available computers.</p>
+        <hr>
+        <div class="d-flex gap-3">
+            <span>1<i  onclick="showComment2()" class="fa-regular fa-comment"></i>  </span>
+                        <span>3 <i data-bs-toggle="modal" data-bs-target="#exampleModall"   onclick="changeColor()" id="icone-like" class="fa-regular fa-heart"></i> </span>
+
+        </div>
+        <a href="#" class="btn btn-primary" onclick="showComment2()">Read More!</a>
+      </div>
+    </div>
+    </div>
+
+    
+
+    <!-- 3 -->
+     <div id="posts" class=" shadow p-3 mb-5 bg-body-tertiary rounded-2">
+    <div class="card">
+      <div class="card-header ">
+        <img src="imgaes\avtar.png" alt="avatar-user" style="width: 40px; height: 40px; object-fit: cover;">
+        <span class="fw-bold">@Rana_Aldosari</span>
+      </div>
+      <div class="card-body">
+        <img src="https://media.alanba.com.kw/articlefiles/2019/11/934386-1.jpg?w=770" class="w-75" style="height: 200px;" alt="">
+        <h6 class="text-secondary fw-normal">Early 1990s-1996</h6>
+        <h5 class="card-title fw-small">How did the Internet spread and become a life network?</h5>
+        <p class="card-text">Internet use remained limited to universities and academic centers until 1991, when the Internet's most significant turning point occurred. The network expanded and progressed, and university students began contributing their information until the Mosaic browser was introduced, ushering in the expansion of networks around the world.</p>
+        <hr>
+        <div class="d-flex gap-3">
+            <span> <i  onclick="showComment()" class="fa-regular fa-comment"></i>  </span>
+                        <span>3 <i data-bs-toggle="modal" data-bs-target="#exampleModall"   onclick="changeColor()" id="icone-like" class="fa-regular fa-heart"></i> </span>
+
+        </div>
+        <a href="#" class="btn btn-primary" onclick="showComment3()">Read More!</a>
+      </div>
+    </div>
+    </div>
+
+    <!-- 4 -->
+ <div id="posts" class=" shadow p-3 mb-5 bg-body-tertiary rounded-2">
+    <div class="card">
+      <div class="card-header ">
+        <img src="imgaes\avtar.png" alt="avatar-user" style="width: 40px; height: 40px; object-fit: cover;">
+        <span class="fw-bold">@Rana_Aldosari</span>
+      </div>
+      <div class="card-body">
+        <img src="https://downloads.hindawi.org/books/html/83063951/Images/figure14.png" class="w-75" style="height: 200px;" alt="">
+        <h6 class="text-secondary fw-normal">1997-2000</h6>
+        <h5 class="card-title fw-small">The beginning of the digital age</h5>
+        <p class="card-text">Companies and organizations began to realize the importance of an online presence, and thousands of websites emerged offering a variety of services, from news and e-commerce to entertainment and education. Giant companies such as Amazon (1994) and Google (1998) were founded, contributing to shaping the structure of the internet as we know it today.</p>
+        <hr>
+        <div class="d-flex gap-3">
+            <span><i  onclick="showComment()" class="fa-regular fa-comment"></i>  </span>
+                        <span>5 <i data-bs-toggle="modal" data-bs-target="#exampleModall"   onclick="changeColor()" id="icone-like" class="fa-regular fa-heart"></i> </span>
+
+        </div>
+        <a href="#" class="btn btn-primary" onclick="showComment4()">Read More!</a>
+      </div>
+    </div>
+    </div>
+<!-- 5 -->
+  <div id="posts" class=" shadow p-3 mb-5 bg-body-tertiary rounded-2">
+    <div class="card">
+      <div class="card-header ">
+        <img src="imgaes\avtar.png" alt="avatar-user" style="width: 40px; height: 40px; object-fit: cover;">
+        <span class="fw-bold">@Rana_Aldosari</span>
+      </div>
+      <div class="card-body">
+        <img src="https://downloads.hindawi.org/books/html/83063951/Images/figure14.png" class="w-75" style="height: 200px;" alt="">
+        <h6 class="text-secondary fw-normal">2000-until now</h6>
+        <h5 class="card-title fw-small">internet</h5>
+        <p class="card-text">With the beginning of the new millennium, a new type of online communication emerged: social networking sites. It began with sites like MySpace (2003), followed by Facebook (2004) and Twitter (2006). These platforms have become an essential part of people's lives, a way to communicate, express themselves, and even shop.</p>
+        <hr>
+        <div class="d-flex gap-3">
+            <span><i  onclick="showComment()" class="fa-regular fa-comment"></i>  </span>
+                        <span>8<i data-bs-toggle="modal" data-bs-target="#exampleModall"   onclick="changeColor()" id="icone-like" class="fa-regular fa-heart"></i> </span>
+
+        </div>
+        <a href="#" class="btn btn-primary" onclick="showComment4()">Read More!</a>
+      </div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+
+<script>
+  function switchLogin() {
+    let username = document.getElementById("recipient-name").value
+    let password = document.getElementById("recipient-pass").value
+    let userError = document.getElementById("user-error-msg");
+    let passError = document.getElementById("pass-error-msg");
+
+    userError.textContent = "";
+    passError.textContent = "";
+
+    let valid = true;
+
+    if (username.length <= 4) {
+      userError.textContent = "Username must be at least 5 characters";
+      valid = false;
+    }
+
+    if (password.length <= 3) {
+      passError.textContent = "Password must be at least 4 characters";
+      valid = false;
+    }
+
+    if (!valid) return;
+
+    const userKey = "user" + username;
+    const storedPassword = localStorage.getItem(userKey);
+
+    if (storedPassword === password) {
+      localStorage.setItem("userName-key", username);
+      window.location.href = "profile.html";
+    } else {
+      userError.textContent = "Invalid username or password";
+    }
+
+    window.location.href="edit.html"
+  }
+
+  
+  function switchSignup() {
+    let username = document.getElementById("regester-name").value.trim();
+    let password = document.getElementById("regester-pass").value.trim();
+    let email = document.getElementById("regester-email").value.trim();
+    let phone = document.getElementById("regester-phone").value.trim();
+
+
+    let usernameError = document.getElementById("regesterName-error-msg");
+    let passwordError = document.getElementById("regesterPass-error-msg");
+    let emailError = document.getElementById("regesterEmail-error-msg");
+    let phoneError = document.getElementById("regesterPhone-error-msg");
+
+    usernameError.textContent = "";
+    passwordError.textContent = "";
+    emailError.textContent = "";
+    phoneError.textContent = "";
+
+    let valid = true;
+
+    if (username.length < 4) {
+      usernameError.textContent = "Username must be at least 4 characters";
+      valid = false;
+    }
+
+    if (password.length <= 3) {
+      passwordError.textContent = "Password must be at least 4 characters";
+      valid = false;
+    }
+
+    if (email.length <= 8 || !email.includes("@") || !email.includes(".")) {
+      emailError.textContent = "Email is not correct";
+      valid = false;
+    }
+
+    if (phone.length < 9 || isNaN(phone)) {
+      phoneError.textContent = "Phone number must be at least 9 digits and numeric";
+      valid = false;
+    }
+
+    if (!valid) return;
+
+    const userKey = "user" + username;
+    if (localStorage.getItem(userKey)) {
+      usernameError.textContent = "Username already exists";
+      return;
+    }
+
+    localStorage.setItem(userKey, password);
+    localStorage.setItem("userName-key", username);
+    // window.location.href = "profile.html";
+    // alert("Login success");
+
+   window.location.href="edit.html"
+
+  }
+
+function showComment(){
+  window.location.href="showDetailsCard.html"
+}
+
+function showCard(){
+  window.location.href="showDetailsCard.html"
+}
+function showComment2(){
+  window.location.href="showDetailsCardT.html"
+}
+
+    function showComment3(){
+      window.location.href="showDetailsCardTh.html"
+    }
+  function showComment4(){
+    window.location.href="showDetailsCardF.html"
+   } 
+   function showComment5(){
+    window.location.href="showDetailsCardFi.html"
+   }
+</script>
+
+
+    </body>
+</html>
